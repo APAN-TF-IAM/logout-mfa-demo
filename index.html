@@ -1,0 +1,48 @@
+<html>
+<head>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+<script>
+function openMenu() {  var navMain = document.getElementById('navMenuId');  if (navMain.className=== 'navMenu') {    navMain.className += ' mobileView';  } else {    navMain.className = 'navMenu';  }}
+</script>
+<div class='navMenu' id='navMenuId'><a href='' class='main_links'>Home</a><a href='https://github.com/APAN-TF-IAM/logout-mfa-demo' class='main_links'>Source</a><a href='about.html' class='main_links'>About</a><a class='icon' href='javascript:void(0);' onclick='openMenu()'>&#9776;</a>
+</div>
+<h1>
+APAN Federation Demonstration
+</h1>
+<p>
+This site demonstrate the following identity federation features.
+<ul>
+  <li>Federeated logout or Single Logout (SLO)</li>
+  <li>Multi Factor Authentication</li>
+<ul>
+<br>
+<table style="width:80%" id='simple_table' >
+<tr>
+	<td style="width:25%">
+<A href="https://sp.aaf-experimentation.cloud.edu.au/Shibboleth.sso/Login?authnContextClassRef=https%3A%2F%2Frefeds.org%2Fprofile%2Fmfa%20urn:oasis:names:tc:SAML:2.0:ac:classes:Password%20urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport">Login</a></td>
+	<td>Login to the site using whatever Authentication Factor is available at the IdP from the
+following list. The list is in preference order, the IdP will authenticate the user with first available
+supported authentication method.
+
+<ul>
+<li>REFEDS MFA Profile - https://refeds.org/profile/mfa</li>
+<li>REFEDS Single Factor Authentication Profile - https://refeds.org/profile/sfa</li>
+<li>PasswordProtectedTransport - urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</li>
+<li>Password - urn:oasis:names:tc:SAML:2.0:ac:classes:Password</li>
+</ul>
+
+</tr>
+<tr>
+	<td>Login MFA - Option 1</td>
+	<td>Login with MFA is required. If MFA is not provided access to the site is denied</td>
+</tr>
+<tr>
+<td><A href="https://sp.aaf-experimentation.cloud.edu.au/Shibboleth.sso/Login?authnContextClassRef=https%3A%2F%2Frefeds.org%2Fprofile%2Fmfa">Login MFA - Option 2</a></td>
+	<td>Login with MFA is required. If MFA is not provided a error state will occur and access will be denied</td>
+</tr>
+</table>
+</body>
+</html>
+
